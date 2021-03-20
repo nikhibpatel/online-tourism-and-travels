@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="color:red">BOOKING DETAILS</h1>
+
+    {% if booking_list %}
+    <ul>
+
+      {% for passenger in booking_list %}
+      <li>
+        <a href="{{ student.get_absolute_url }}">
+        <p style="color:red;">PASSENGER NAME:</p><p style="color:blue;">{{ passenger.passenger_name }}</p></a> 
+        <br><p style="color:red;">PASSENGER AGE:</p><p style="color:blue;">{{passenger.passenger_age}}</p>
+        <br><p style="color:red;">MODE OF TRANSPORT:</p><p style="color:blue;">{{passenger.mode_of_transport}}</p>
+        <br><p style="color:red;">PASSSENGER MOBILE NUMBER:</p><p style="color:blue;">{{passenger.passenger_mobile_no}}</p>
+        <br><p style="color:red;">DATE OF ARRIVAL:</p><p style="color:blue;">{{passenger.date_of_arrival}}</p>
+<form action="/firstdb/delbookinginfo/" method = "post">{% csrf_token %}
+	  <input type="hidden" name="passengername" value={{passenger.passenger_name}} />
+	  <input type="submit" value="CANCEL">
+	</form>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no tickets booked.</p>
+    {% endif %}       
+    <p>  <a href="/firstdb/getbookinginfo/">Click</a> to add new record. </p>
+{% endblock %}

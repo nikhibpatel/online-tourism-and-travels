@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% if form.errors %}
+		<p class="error"> INVALID BOOKING INFORMATION </p>
+	{% endif %}
+
+	<form action="/firstdb/addbookinginfo/" method = "post">{% csrf_token %}
+		<label for="passengername">Passenger Name : </label>
+		<input type="text" name = "passengername" value = "" id="passengername">
+		<br><br>
+		<label for="passengerage">Passenger Age : </label>
+		<input type="text" name = "passengerage" value = "" id="passengerage">
+		<br><br>
+		<label for="passenger_mno">Passenger Mobile No : </label>
+		<input type="text" name = "passenger_mno" value = "" id="passenger_mno">
+		<br><br>
+		<label for="mode_of_transport">Mode Of Transport : </label>
+		<input type="text" name = "mode_of_transport" value = "" id="mode_of_transport">
+		<br><br>
+		<label for="date_of_arrival"> Date Of Arrival:</label>
+		<input type="date" name="date_of_arrival" value="" id="date_of_arrival">
+		<input type="submit" value="BOOK"/>
+	</form>
+	<p> <a href="/firstdb/bookings/">Click</a> TO VIEW BOOKING DETAILS. </p>
+{% endblock %}
