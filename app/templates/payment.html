@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table border="2" align="center">
+    <form action="/app/payment/" method="POST">
+        {% csrf_token %}
+        <tr ><th align="center" colspan="2">Payment</th></tr>
+            <tr>
+                <td>Card Number</td>
+                <td>
+                    <input type="number" name="card_num" minlength="100000000000" minlength="999999999999" placeholder="12 digit number"  required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Expiry Date
+                </td>
+                <td>
+                    <select name="month" required>
+                        <option value="">Month</option>
+                        <option value="Jan(01)">Jan(01)</option>
+                        <option value="Feb(02)">Feb(02)</option>
+                        <option value="Mar(03)">Mar(03)</option>
+                        <option value="Apr(04)">Apr(04)</option>
+                        <option value="May(05)">May(05)</option>
+                        <option value="Jun(06)">June(06)</option>
+                        <option value="Jul(07)">July(07)</option>
+                        <option value="Aug(08)">Aug(08)</option>
+                        <option value="Sept(09)">Sep(09)</option>
+                        <option value="Oct(10)">Oct(10)</option>
+                        <option value="Nov(11)">Nov(11)</option>
+                        <option value="Dec(12)">Dec(12)</option>
+                    </select>
+                    <select name="year" required>
+                        <option value="">Year</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    CVV
+                </td>
+                <td>
+                    <input type="number" name="cvv" maxlength="100" minlength="999" placeholder="***" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Make Payment">
+                </td>
+            </tr>
+    </form>
+</table>
+{% endblock %}

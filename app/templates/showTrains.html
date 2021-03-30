@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container pt-4">
+    <div class="col-lg-10 mx-auto shadow p-0 mt-4">
+        <div class="alert alert-info">
+            <h2 align="center">Trains</h2>
+        </div>
+        <div class="p-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>source</th>
+                        <th>destination</th>
+                        <th> time </th>
+                        <th>price</th>
+                        <th>available seat</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    {% for train in trains %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{train.source}}</td>
+                            <td>{{train.destination}}</td>
+                            <td>{{train.time}}</td>
+                            <td>{{train.price}}</td>
+                            <td>{{train.seat}}</td>
+                            <td>
+                              <a href="/app/reservation/{{train.id}}" class="btn btn-danger" style="background-color:green ">Reserve</a>
+                            </td>
+                        
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
