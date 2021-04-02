@@ -1,0 +1,60 @@
+{% extends 'search.html' %}
+
+{% block content1 %}
+
+    <div class="col-lg-8 mx-auto shadow p-0 mt-4">
+        {% if not buss %}
+        <div class="p-4">
+            <br>
+            <br>
+            <div class="alert alert-info text-center">
+              <p class="" style="font-size: 30px;">No Bus Found</p>
+            </div>
+            <br>
+            <br>
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            <h2 align="center">Bus</h2>
+        </div>
+        
+        <div class="p-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>source</th>
+                        <th>destination</th>
+                        <th> time </th>
+                        <th>price</th>
+                        <th>available seat</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    {% for bus in buss %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{bus.source}}</td>
+                            <td>{{bus.destination}}</td>
+                            <td>{{bus.time}}</td>
+                            <td>{{bus.price}}</td>
+                            <td>{{bus.seat}}</td>
+                            <td>
+                              <a href="/app/reservation/{{bus.id}}" class="btn btn-danger" style="background-color:green ">Reserve</a>
+                            </td>
+                        
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+        {% endif %}
+    </div>
+
+{% endblock content1 %}
+
+
+
+
+

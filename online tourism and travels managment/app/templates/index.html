@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<div class="container pt-4">
+  <div class="row  p-0 mt-4 " >
+      <div class="col-lg-4 mx-auto shadow p-0">
+        <h2>FLIGHT SERVICE</h2>
+    <a href="/app/flights/"><img src="{% static 'flight.jpg' %}"  style="height:300px; width:300"></a>
+    
+      </div>
+      <div class="col-lg-4 mx-auto shadow p-0">
+        <h2>TRAIN SERVICE</h2>
+        <a href="/app/trains/"><img src="{% static 'train.jpg' %}" style="height:300px; width:300"></a>
+      </div>
+      
+      <div class="col-lg-4 mx-auto shadow p-0">
+        <h2>BUS SERVICE</h2>
+        <a href="/app/buss"  class="bus"><img src="{% static 'bus.jpg' %}" style="height:300px; width:300"></a>
+        
+      </div>
+      
+  </div>
+</div>
+
+{% endblock %}

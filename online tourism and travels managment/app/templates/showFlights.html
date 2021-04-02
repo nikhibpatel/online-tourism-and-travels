@@ -1,0 +1,56 @@
+{% extends 'search.html' %}
+
+{% block content1 %}
+
+    <div class="col-lg-8 mx-auto shadow p-0 mt-4">
+        {% if not flights %}
+        <div class="p-4">
+            <br>
+            <br>
+            <div class="alert alert-info text-center">
+              <p class="" style="font-size: 30px;">No flight Found</p>
+            </div>
+            <br>
+            <br>
+        </div>
+        {% else %}
+      <div class="alert alert-info">
+        <h2 align="center">Flights</h2>
+      </div>
+      <div class="p-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>source</th>
+                    <th>destination</th>
+                    <th> time </th>
+                    <th>price</th>
+                    <th>available seat</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in flights %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{flight.source}}</td>
+                        <td>{{flight.destination}}</td>
+                        <td>{{flight.time}}</td>
+                        <td>{{flight.price}}</td>
+                        <td>{{flight.seat}}</td>
+                        <td>
+                        <a href="/app/reservation/{{flight.id}}" class="btn btn-danger" style="background-color:green ">Reserve</a>
+                        </td>
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+            
+            
+        </table>
+      </div>
+      {% endif %}
+    </div>
+
+
+{% endblock content1%}

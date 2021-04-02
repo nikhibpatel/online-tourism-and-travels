@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .vertical-center {
+      margin: 0;
+      position: absolute;
+      left:35%;
+      top: 50%;
+      -ms-transform: translateY(-500%);
+      transform: translateY(-50%);
+    }
+    tr,td {
+    height: 80px;
+    width: 300px;
+    }
+
+    </style>
+
+
+<div class="container">
+<div class="vertical-center">
+        
+<table border="2" align="center" style=" font-size: 30px;">
+    <form action="/app/payment/" method="POST">
+        {% csrf_token %}
+        <tr style="background-color:rgb(68, 163, 68); color:white;" ><td align="center" colspan="2"><h1>Payment</h1></td></tr>
+            <tr>
+                <td><h2>Card Number</h2></td>
+                <td>
+                    <input type="number" name="card_num" placeholder="12 digit number"  required>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h2>
+                        Expiry Date
+                    </h2>
+                </td>
+                <td>
+                    <select name="month" required>
+                        <option value="">Month</option>
+                        <option value="Jan(01)">Jan(01)</option>
+                        <option value="Feb(02)">Feb(02)</option>
+                        <option value="Mar(03)">Mar(03)</option>
+                        <option value="Apr(04)">Apr(04)</option>
+                        <option value="May(05)">May(05)</option>
+                        <option value="Jun(06)">June(06)</option>
+                        <option value="Jul(07)">July(07)</option>
+                        <option value="Aug(08)">Aug(08)</option>
+                        <option value="Sept(09)">Sep(09)</option>
+                        <option value="Oct(10)">Oct(10)</option>
+                        <option value="Nov(11)">Nov(11)</option>
+                        <option value="Dec(12)">Dec(12)</option>
+                    </select>
+                    <select name="year" required>
+                        <option value="">Year</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h2>CVV</h2>
+                </td>
+                <td>
+                    <input type="number" name="cvv" placeholder="***" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" style="background-color:rgb(68, 163, 68); color:white;"  value="Make Payment" name="submit">
+                </td>
+            </tr>
+    </form>
+</table>
+
+      </div>
+    </div>
+
+
+{% endblock %}
+
