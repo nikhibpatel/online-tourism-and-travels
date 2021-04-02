@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container pt-4">
+    <div class="row  p-0 mt-0 ">
+        <div class="col-lg-3 mx-auto shadow p-0" >
+            <div class="alert alert-info">
+              <h2>search here</h2>
+            </div>
+            <div class="p-4">
+                <form action="/app/search/">
+                    <br>
+                    <input class="form-control mr-sm-2" type="text" placeholder="source" name="source" required>
+                    <br>
+                    <p align="center">TO</p>
+                    <input class="form-control mr-sm-2" type="text" placeholder="destination" name="destination" required>
+                    <br>
+                    <br>
+                    <div class="text-center">
+                    <input type="submit" value="Search" class="btn btn-success" style="width:100%">
+                    </div>
+                </form>
+            </div>
+          </div>
+
+
+        {% block content1 %}
+
+        {% endblock content1 %}
+
+        
+    </div>
+</div>
+
+
+
+{% endblock content %}

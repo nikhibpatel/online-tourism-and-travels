@@ -1,19 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<table border="2" align="center">
+
+<style>
+    .vertical-center {
+      margin: 0;
+      position: absolute;
+      left:35%;
+      top: 50%;
+      -ms-transform: translateY(-500%);
+      transform: translateY(-50%);
+    }
+    tr,td {
+    height: 80px;
+    width: 300px;
+    }
+
+    </style>
+
+
+<div class="container">
+<div class="vertical-center">
+        
+<table border="2" align="center" style=" font-size: 30px;">
     <form action="/app/payment/" method="POST">
         {% csrf_token %}
-        <tr ><th align="center" colspan="2">Payment</th></tr>
+        <tr style="background-color:rgb(68, 163, 68); color:white;" ><td align="center" colspan="2"><h1>Payment</h1></td></tr>
             <tr>
-                <td>Card Number</td>
+                <td><h2>Card Number</h2></td>
                 <td>
-                    <input type="number" name="card_num" minlength="100000000000" minlength="999999999999" placeholder="12 digit number"  required>
+                    <input type="number" name="card_num" placeholder="12 digit number"  required>
                 </td>
             </tr>
+            
             <tr>
                 <td>
-                    Expiry Date
+                    <h2>
+                        Expiry Date
+                    </h2>
                 </td>
                 <td>
                     <select name="month" required>
@@ -46,19 +70,26 @@
                     </select>
                 </td>
             </tr>
+            
             <tr>
                 <td>
-                    CVV
+                    <h2>CVV</h2>
                 </td>
                 <td>
-                    <input type="number" name="cvv" maxlength="100" minlength="999" placeholder="***" required>
+                    <input type="number" name="cvv" placeholder="***" required>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="Make Payment">
+                    <input type="submit" style="background-color:rgb(68, 163, 68); color:white;"  value="Make Payment" name="submit">
                 </td>
             </tr>
     </form>
 </table>
+
+      </div>
+    </div>
+
+
 {% endblock %}
+

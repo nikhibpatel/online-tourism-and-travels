@@ -1,13 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'search.html' %}
 
-{% block content %}
+{% block content1 %}
 
-
-<div class="container pt-4">
-    <div class="col-lg-10 mx-auto shadow p-0 mt-4">
+    <div class="col-lg-8 mx-auto shadow p-0 mt-4">
+        {% if not buss %}
+        <div class="p-4">
+            <br>
+            <br>
+            <div class="alert alert-info text-center">
+              <p class="" style="font-size: 30px;">No Bus Found</p>
+            </div>
+            <br>
+            <br>
+        </div>
+        {% else %}
         <div class="alert alert-info">
             <h2 align="center">Bus</h2>
         </div>
+        
         <div class="p-4">
             <table class="table">
                 <thead>
@@ -39,12 +49,12 @@
             </table>
             
         </div>
+        {% endif %}
     </div>
-</div>
+
+{% endblock content1 %}
 
 
 
 
 
-
-{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+
+
+<style>
+    tr,td {
+    height: 50px;
+    width: 300px;
+    }
+
+</style>
+
+
+<table style=" font-size: 25px;" align="center" border="1" >
+    <tr>
+        <th >
+            Name : 
+        </th>
+        <td>
+            {{book.name}} 
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Age :
+        </th>
+        <td>
+            {{book.age}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Phone Number :
+        </th>
+        <td>
+            {{book.phone}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Email Address :
+        </th>
+        <td>
+            {{book.email}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Mode Of mode of transport :
+        </th>
+        <td>
+            {{book.mode_of_transport}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Price :
+        </th>
+        <td>
+            {{book.price}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Total Cost :
+        </th>
+        <td>
+            {{book.total_cost}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Seat :
+        </th>
+        <td>
+            {{book.seat}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Source :
+        </th>
+        <td>
+            {{book.source}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Destination
+        </th>
+        <td>
+            {{book.destination}}
+        </td>
+    </tr>
+</table>
+
+{% endblock %}
+

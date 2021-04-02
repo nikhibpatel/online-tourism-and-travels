@@ -9,12 +9,14 @@ class BOOKING(models.Model):
 	user = models.ForeignKey(User,on_delete = models.CASCADE)
 	name = models.CharField(max_length=100)
 	age = models.IntegerField(default=0)
-	phone = PhoneNumberField()
+	phone = PhoneNumberField(max_length=10)
 	mode_of_transport = models.CharField(max_length=10,default= " " )
 	price = models.IntegerField(default=0)
+	total_cost = models.IntegerField(default=0)
 	seat = models.IntegerField(default=0)
 	source = models.CharField(max_length=100)
 	destination = models.CharField(max_length=100)
+	time = models.TimeField(auto_now=True)
 	email = models.EmailField()
 
 

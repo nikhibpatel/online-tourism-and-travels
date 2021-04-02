@@ -1,10 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'search.html' %}
 
-{% block content %}
+{% block content1 %}
 
-
-<div class="container pt-4">
-    <div class="col-lg-10 mx-auto shadow p-0 mt-4">
+    <div class="col-lg-8 mx-auto shadow p-0 mt-4">
+        {% if not trains %}
+        <div class="p-4">
+            <br>
+            <br>
+            <div class="alert alert-info text-center">
+              <p class="" style="font-size: 30px;">No Train Found</p>
+            </div>
+            <br>
+            <br>
+        </div>
+        {% else %}
         <div class="alert alert-info">
             <h2 align="center">Trains</h2>
         </div>
@@ -39,8 +48,8 @@
             </table>
             
         </div>
+        {% endif %}
     </div>
-</div>
 
 
-{% endblock %}
+{% endblock content1%}
